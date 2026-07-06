@@ -305,17 +305,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Particles
   new ParticleCanvas('particles-canvas');
 
-  // Typing effect — arcade style
-  const typedElement = document.getElementById('typed-text');
-  if (typedElement) {
-    new TypeWriter(typedElement, [
-      'UTKARSH_PERSAI',
-      'SOFTWARE_ENGINEER',
-      'PROBLEM_SOLVER',
-      'SYSTEMS_BUILDER',
-      'CS_UNDERGRAD',
-    ]);
-  }
+
 
   // Scroll animations
   initScrollReveal();
