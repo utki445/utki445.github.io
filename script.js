@@ -310,11 +310,10 @@ document.addEventListener('DOMContentLoaded', () => {
   if (typedElement) {
     new TypeWriter(typedElement, [
       'UTKARSH_PERSAI',
-      'ML_ENGINEER',
-      'IOT_BUILDER',
-      'HACKATHON_WINNER',
+      'SOFTWARE_ENGINEER',
       'PROBLEM_SOLVER',
-      'DATA_SCIENTIST',
+      'SYSTEMS_BUILDER',
+      'CS_UNDERGRAD',
     ]);
   }
 

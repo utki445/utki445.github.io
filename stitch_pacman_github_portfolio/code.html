@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PORTFOLIO_OS // CRAFTSPERSON_OS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;family=JetBrains+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary": "#00363a",
+                        "primary-container": "#00f2ff",
+                        "secondary-container": "#7d01b1",
+                        "outline-variant": "#3a494b",
+                        "surface-container-lowest": "#0e0e13",
+                        "on-tertiary": "#3a3000",
+                        "background": "#0a0a0f",
+                        "primary-fixed": "#74f5ff",
+                        "outline": "#849495",
+                        "on-error": "#690005",
+                        "on-tertiary-fixed-variant": "#544600",
+                        "surface-variant": "#35343a",
+                        "error-container": "#93000a",
+                        "secondary": "#e9b3ff",
+                        "surface-bright": "#39383e",
+                        "tertiary-container": "#ffd81d",
+                        "on-primary-container": "#006a71",
+                        "inverse-on-surface": "#303036",
+                        "inverse-primary": "#00696f",
+                        "tertiary-fixed": "#ffe16d",
+                        "secondary-fixed-dim": "#e9b3ff",
+                        "surface-container-high": "#2a292f",
+                        "on-secondary": "#510074",
+                        "secondary-fixed": "#f6d9ff",
+                        "surface-container-highest": "#35343a",
+                        "tertiary": "#fff6e4",
+                        "on-error-container": "#ffdad6",
+                        "primary-fixed-dim": "#00dbe7",
+                        "on-secondary-fixed": "#310048",
+                        "tertiary-fixed-dim": "#e9c400",
+                        "surface": "#131318",
+                        "on-surface-variant": "#b9cacb",
+                        "on-surface": "#e4e1e9",
+                        "on-primary-fixed": "#002022",
+                        "inverse-surface": "#e4e1e9",
+                        "on-background": "#e4e1e9",
+                        "on-secondary-container": "#e5a9ff",
+                        "surface-dim": "#131318",
+                        "surface-container-low": "#1b1b20",
+                        "on-primary-fixed-variant": "#004f54",
+                        "surface-container": "#1f1f25",
+                        "error": "#ffb4ab",
+                        "on-secondary-fixed-variant": "#7200a3",
+                        "primary": "#e1fdff",
+                        "on-tertiary-fixed": "#221b00",
+                        "surface-tint": "#00dbe7",
+                        "on-tertiary-container": "#715e00"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "dot-path-gap": "16px",
+                        "margin": "48px",
+                        "container-max": "1200px",
+                        "unit": "4px"
+                    },
+                    "fontFamily": {
+                        "label-caps": ["JetBrains Mono"],
+                        "h2": ["Inter"],
+                        "h3": ["Inter"],
+                        "body-base": ["Inter"],
+                        "h1": ["Inter"],
+                        "code-sm": ["JetBrains Mono"]
+                    },
+                    "fontSize": {
+                        "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                        "h2": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "h3": ["24px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "body-base": ["16px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+                        "h1": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                        "code-sm": ["14px", {"lineHeight": "1.5", "letterSpacing": "0", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { background-color: #0a0a0f; color: #e4e1e9; }
+        .inner-glow-sm { box-shadow: inset 0 0 10px rgba(0, 242, 255, 0.05); }
+        .glass-card { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.08); }
+        .glass-card:hover { border-color: #00f2ff; box-shadow: 0 0 20px rgba(0, 242, 255, 0.15); }
+        .dot-path-divider { display: flex; align-items: center; justify-content: center; gap: 16px; padding: 48px 0; }
+        .dot-path-divider span { width: 4px; height: 4px; border-radius: 50%; background: #3a494b; }
+        .dot-path-divider span.active { background: #00f2ff; box-shadow: 0 0 8px #00f2ff; }
+        .pacman-loader { width: 20px; height: 20px; background: #ffd81d; border-radius: 50%; clip-path: polygon(100% 0%, 100% 100%, 0% 100%, 0% 0%, 50% 50%); }
+        .ghost-accent { filter: drop-shadow(0 0 5px currentColor); }
+        @keyframes typing { from { width: 0 } to { width: 100% } }
+        .typewriter { overflow: hidden; white-space: nowrap; border-right: 3px solid #00f2ff; animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite; }
+        @keyframes blink-caret { from, to { border-color: transparent } 50% { border-color: #00f2ff; } }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body-base selection:bg-primary-container selection:text-on-primary">
+<!-- TopAppBar -->
+<header class="sticky top-0 z-50 w-full bg-[#0a0a0f]/80 backdrop-blur-md border-b border-white/10">
+<nav class="flex justify-between items-center max-w-7xl mx-auto px-6 h-16">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#00f2ff]" data-icon="terminal">terminal</span>
+<span class="text-xl font-black text-[#00f2ff] drop-shadow-[0_0_8px_rgba(0,242,255,0.5)] font-mono uppercase tracking-tighter">PORTFOLIO_OS</span>
+</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-[#00f2ff] border-b-2 border-[#00f2ff] pb-1 font-mono text-sm" href="#home">HOME</a>
+<a class="text-slate-400 font-mono text-sm hover:text-[#00f2ff] transition-all duration-300" href="#about">ABOUT</a>
+<a class="text-slate-400 font-mono text-sm hover:text-[#00f2ff] transition-all duration-300" href="#experience">EXPERIENCE</a>
+<a class="text-slate-400 font-mono text-sm hover:text-[#00f2ff] transition-all duration-300" href="#projects">PROJECTS</a>
+<a class="text-slate-400 font-mono text-sm hover:text-[#00f2ff] transition-all duration-300" href="#contact">CONTACT</a>
+</div>
+<button class="md:hidden text-[#00f2ff]">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</nav>
+</header>
+<main class="max-w-7xl mx-auto px-6">
+<!-- Hero Section -->
+<section class="min-h-[707px] flex flex-col justify-center items-center text-center py-24 relative" id="home">
+<div class="absolute inset-0 opacity-10 pointer-events-none" data-alt="subtle tech grid background with tiny cyan dots" style="background-image: radial-gradient(#00f2ff 1px, transparent 1px); background-size: 32px 32px;"></div>
+<div class="mb-6 inline-flex items-center gap-4 bg-white/5 border border-white/10 px-4 py-2 rounded-full">
+<div class="pacman-loader"></div>
+<span class="font-code-sm text-primary-container">LEVEL_01 START</span>
+</div>
+<h1 class="font-h1 text-on-background mb-4">
+                I AM A <span class="text-primary-container typewriter block md:inline">PROBLEM_SOLVER</span>
+</h1>
+<p class="max-w-2xl text-on-surface-variant text-body-base mb-10 leading-relaxed">
+                Building high-fidelity digital experiences at the intersection of engineering rigor and creative play. Senior Developer focused on building robust terminal-grade systems.
+            </p>
+<div class="flex flex-wrap justify-center gap-4">
+<button class="bg-primary-container text-on-primary font-label-caps px-8 py-4 rounded hover:brightness-110 transition-all flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="download">download</span>
+                    DOWNLOAD_RESUME
+                </button>
+<button class="glass-card text-on-background font-label-caps px-8 py-4 rounded flex items-center gap-2">
+                    INITIATE_CONTACT
+                    <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</section>
+<!-- Dot Path Divider -->
+<div class="dot-path-divider">
+<span class="active"></span><span></span><span></span><span></span>
+</div>
+<!-- About Bento Grid -->
+<section class="py-12" id="about">
+<div class="flex items-center gap-3 mb-10">
+<span class="material-symbols-outlined text-secondary-fixed-dim" data-icon="person">person</span>
+<h2 class="font-h2 text-on-surface uppercase tracking-tight">System_Profile</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<div class="md:col-span-8 glass-card p-8 rounded-xl flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-2 mb-4 text-primary-container/60 font-code-sm">
+<span class="material-symbols-outlined text-xs" data-icon="description">description</span>
+                            README.md
+                        </div>
+<h3 class="font-h3 mb-4 text-on-surface">Digital Architect &amp; Creative Engineer</h3>
+<p class="text-on-surface-variant leading-relaxed">
+                            Passionate about creating seamless user interfaces and scalable backend architectures. I treat every project like a high-score challenge—optimizing for performance, accessibility, and sheer technical elegance. Based in the digital ether, shipping code that lasts.
+                        </p>
+</div>
+<div class="mt-8 flex gap-4">
+<div class="flex flex-col">
+<span class="text-primary-container font-h2">5+</span>
+<span class="font-label-caps text-on-surface-variant">YEARS_EXP</span>
+</div>
+<div class="flex flex-col">
+<span class="text-secondary text-h2">42</span>
+<span class="font-label-caps text-on-surface-variant">REPOS_SHIPPED</span>
+</div>
+</div>
+</div>
+<div class="md:col-span-4 grid grid-rows-2 gap-6">
+<div class="glass-card p-6 rounded-xl border-l-4 border-l-[#ff0000]">
+<span class="material-symbols-outlined text-[#ff0000] ghost-accent mb-2" data-icon="ads_click">ads_click</span>
+<h4 class="font-label-caps text-on-surface mb-1">CORE_STACK</h4>
+<p class="text-on-surface-variant font-code-sm">TypeScript, React, Node.js, Go</p>
+</div>
+<div class="glass-card p-6 rounded-xl border-l-4 border-l-[#ffb8ff]">
+<span class="material-symbols-outlined text-[#ffb8ff] ghost-accent mb-2" data-icon="database">database</span>
+<h4 class="font-label-caps text-on-surface mb-1">DATA_SYSTEMS</h4>
+<p class="text-on-surface-variant font-code-sm">PostgreSQL, Redis, GraphQL</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Experience Timeline -->
+<section class="py-24" id="experience">
+<div class="flex items-center gap-3 mb-16">
+<span class="material-symbols-outlined text-primary-container" data-icon="work">work</span>
+<h2 class="font-h2 text-on-surface uppercase tracking-tight">Mission_Log</h2>
+</div>
+<div class="relative space-y-12 before:content-[''] before:absolute before:left-[11px] before:top-0 before:bottom-0 before:w-[2px] before:bg-white/10">
+<!-- Timeline Item -->
+<div class="relative pl-12">
+<div class="absolute left-0 top-1 w-6 h-6 rounded-full bg-background border-2 border-primary-container flex items-center justify-center">
+<div class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></div>
+</div>
+<div class="glass-card p-6 rounded-xl">
+<div class="flex flex-wrap justify-between items-start gap-2 mb-4">
+<div>
+<h3 class="font-h3 text-primary-container">Lead Systems Architect</h3>
+<p class="text-on-surface-variant font-code-sm">CYBER_DYNE SYSTEMS / 2021 — PRESENT</p>
+</div>
+<span class="bg-primary-container/10 text-primary-container font-label-caps px-3 py-1 rounded text-[10px]">CURRENT_MISSION</span>
+</div>
+<ul class="space-y-2 text-on-surface-variant text-sm list-disc list-inside">
+<li>Orchestrated the migration of legacy monolithic architectures to high-performance microservices.</li>
+<li>Implemented CI/CD pipelines reducing deployment latency by 45%.</li>
+<li>Lead a team of 8 engineers in developing a proprietary real-time data visualizer.</li>
+</ul>
+</div>
+</div>
+<div class="relative pl-12">
+<div class="absolute left-0 top-1 w-6 h-6 rounded-full bg-background border-2 border-secondary flex items-center justify-center">
+<div class="w-2 h-2 rounded-full bg-secondary"></div>
+</div>
+<div class="glass-card p-6 rounded-xl">
+<div class="flex flex-wrap justify-between items-start gap-2 mb-4">
+<div>
+<h3 class="font-h3 text-secondary">Frontend Engineer</h3>
+<p class="text-on-surface-variant font-code-sm">PAC-LABS INC. / 2019 — 2021</p>
+</div>
+</div>
+<ul class="space-y-2 text-on-surface-variant text-sm list-disc list-inside">
+<li>Developed high-fidelity UI components using React and Tailwind CSS.</li>
+<li>Optimized web performance, achieving a 100/100 Lighthouse score on core products.</li>
+<li>Collaborated with design teams to establish the company's first internal design system.</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- Skills Progress -->
+<section class="py-24" id="skills">
+<div class="flex items-center gap-3 mb-16">
+<span class="material-symbols-outlined text-tertiary-container" data-icon="bolt">bolt</span>
+<h2 class="font-h2 text-on-surface uppercase tracking-tight">Power_Ups</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<div class="space-y-8">
+<h3 class="font-label-caps text-on-surface-variant border-b border-white/10 pb-2">ENGINEERING_CORE</h3>
+<div class="space-y-4">
+<div class="flex justify-between font-code-sm">
+<span>TYPESCRIPT</span>
+<span class="text-primary-container">95%</span>
+</div>
+<div class="h-2 bg-white/5 rounded-full overflow-hidden relative">
+<div class="absolute inset-y-0 left-0 bg-primary-container" style="width: 95%"></div>
+<div class="absolute top-1/2 -translate-y-1/2 text-primary-container" style="left: calc(95% - 8px)">
+<span class="material-symbols-outlined text-xs scale-150" data-icon="arrow_right" style="font-variation-settings: 'FILL' 1;">arrow_right</span>
+</div>
+</div>
+</div>
+<div class="space-y-4">
+<div class="flex justify-between font-code-sm">
+<span>REACT / NEXT.JS</span>
+<span class="text-primary-container">90%</span>
+</div>
+<div class="h-2 bg-white/5 rounded-full overflow-hidden relative">
+<div class="absolute inset-y-0 left-0 bg-primary-container" style="width: 90%"></div>
+</div>
+</div>
+<div class="space-y-4">
+<div class="flex justify-between font-code-sm">
+<span>NODE.JS</span>
+<span class="text-primary-container">85%</span>
+</div>
+<div class="h-2 bg-white/5 rounded-full overflow-hidden relative">
+<div class="absolute inset-y-0 left-0 bg-primary-container" style="width: 85%"></div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<h3 class="col-span-2 font-label-caps text-on-surface-variant border-b border-white/10 pb-2">EXTENDED_ARSENAL</h3>
+<div class="glass-card p-4 rounded flex items-center gap-3">
+<span class="material-symbols-outlined text-red-500" data-icon="security" style="font-variation-settings: 'FILL' 1;">security</span>
+<span class="font-code-sm">CYBER_SEC</span>
+</div>
+<div class="glass-card p-4 rounded flex items-center gap-3">
+<span class="material-symbols-outlined text-cyan-400" data-icon="cloud" style="font-variation-settings: 'FILL' 1;">cloud</span>
+<span class="font-code-sm">AWS/GCP</span>
+</div>
+<div class="glass-card p-4 rounded flex items-center gap-3">
+<span class="material-symbols-outlined text-pink-400" data-icon="architecture" style="font-variation-settings: 'FILL' 1;">architecture</span>
+<span class="font-code-sm">UI_DESIGN</span>
+</div>
+<div class="glass-card p-4 rounded flex items-center gap-3">
+<span class="material-symbols-outlined text-yellow-400" data-icon="auto_awesome" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<span class="font-code-sm">AI_INTEGRATION</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Projects Grid -->
+<section class="py-24" id="projects">
+<div class="flex items-center gap-3 mb-16">
+<span class="material-symbols-outlined text-secondary" data-icon="code">code</span>
+<h2 class="font-h2 text-on-surface uppercase tracking-tight">Latest_Builds</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Project Card -->
+<div class="glass-card group rounded-xl overflow-hidden flex flex-col h-full">
+<div class="relative h-48 overflow-hidden">
+<img alt="Digital Interface" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 opacity-60 group-hover:opacity-100" data-alt="abstract dark technical interface with glowing cyan lines and digital data overlays in high-tech aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0JvVlAH1VJhSA2gLcuhhzgEqiS09mMaCI8VzFKtaddlprpjb9b3fFzgBhw9vL0NZfDlMY8tBzjFbcNtptJZn66BOohl7mX9XHcsJF5tX_iqWdeMWFzovMVG_3oSdt5Ae0nTAaQdl6ZZXHO5p8z672AoYKTNFabzRZ1l0zq_9pCdgXMxoYdH1LJMzFH1mgUC5Mgo9ZNvXmbGCtrtfVK9u5XExuhSzKTN_ayLOf_3X4XJcAftYfuWgabWs8a-8tYHxThzdDvVenJ5Q"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#0a0a0f] to-transparent"></div>
+</div>
+<div class="p-6 flex-grow flex flex-col">
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-h3 text-on-surface">QUANTUM_DB</h3>
+<a class="text-primary-container hover:scale-110 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="open_in_new">open_in_new</span>
+</a>
+</div>
+<p class="text-on-surface-variant text-sm mb-6 flex-grow">
+                            A distributed high-performance database system designed for low-latency financial transactions. Built with Go and gRPC.
+                        </p>
+<div class="flex flex-wrap gap-2">
+<span class="text-[10px] font-mono px-2 py-1 bg-white/5 border border-white/10 rounded">GO</span>
+<span class="text-[10px] font-mono px-2 py-1 bg-white/5 border border-white/10 rounded">REDIS</span>
+<span class="text-[10px] font-mono px-2 py-1 bg-white/5 border border-white/10 rounded">GRPC</span>
+</div>
+</div>
+</div>
+<!-- Project Card 2 -->
+<div class="glass-card group rounded-xl overflow-hidden flex flex-col h-full">
+<div class="relative h-48 overflow-hidden">
+<img alt="Web App" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 opacity-60 group-hover:opacity-100" data-alt="stylized glassmorphic dashboard interface with purple neon accents and soft data visualization charts" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDaQp5XzzF23H42TQ_OyfwnQFKjcJujE6avUb6CNBJQopBjGgQlsHrNfamTIU8c36pBuNo69SdV8pVsgC9ursx9bzKMpg0eKA0vDajWpUGLuKGJvVJIb8LYPoec144kYQ45JgdR83KLRz1AaML9AiK1D-GFwlg4lyRVkCgFGHzOu5ONJIVkiMYOmSz8g5QHKsREhdgBmvbfOeu3D_BCf9KxOU6ZaZKp9DII6YsEgb6WHj8CQ__Z579xirWRge3NmWahx7AeY3VBT6I"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#0a0a0f] to-transparent"></div>
+</div>
+<div class="p-6 flex-grow flex flex-col">
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-h3 text-on-surface">NEON_UI</h3>
+<a class="text-primary-container hover:scale-110 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="open_in_new">open_in_new</span>
+</a>
+</div>
+<p class="text-on-surface-variant text-sm mb-6 flex-grow">
+                            An open-source design system based on glassmorphic principles and retro arcade aesthetics.
+                        </p>
+<div class="flex flex-wrap gap-2">
+<span class="text-[10px] font-mono px-2 py-1 bg-white/5 border border-white/10 rounded">REACT</span>
+<span class="text-[10px] font-mono px-2 py-1 bg-white/5 border border-white/10 rounded">TAILWIND</span>
+<span class="text-[10px] font-mono px-2 py-1 bg-white/5 border border-white/10 rounded">FRAMER</span>
+</div>
+</div>
+</div>
+<!-- Project Card 3 -->
+<div class="glass-card group rounded-xl overflow-hidden flex flex-col h-full">
+<div class="relative h-48 overflow-hidden">
+<img alt="Security Tool" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 opacity-60 group-hover:opacity-100" data-alt="cybersecurity concept visualization with shield icon and flowing digital code in dark environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1i9w17erHc_290mDKGN5i2a1W-iww1WGb96IYeJCApsPwV4GO1PvsuhrUSt-ZmoaQhv2y6NSFrepS_GgbchVStL6QFZZ0BkBfGygZ2cz1jrLZLHpZVT9ES-rYeaaQjP0ocy4ZRjG03IvCeisNurTWQZuejKKkdrXSaQQ8f3k8zRi9x0Qm76nbLWl7j1ZXgzKUah0B8R7ugVd8kbtvf0DURFEj-ZaDF-vw1lfeLd6eoj-2Ec_v5mzFlaCWVCbgTdYmdV7U0EQZK3M"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#0a0a0f] to-transparent"></div>
+</div>
+<div class="p-6 flex-grow flex flex-col">
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-h3 text-on-surface">SENTINEL_NODE</h3>
+<a class="text-primary-container hover:scale-110 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="open_in_new">open_in_new</span>
+</a>
+</div>
+<p class="text-on-surface-variant text-sm mb-6 flex-grow">
+                            A lightweight intrusion detection system for edge computing nodes with automated response protocols.
+                        </p>
+<div class="flex flex-wrap gap-2">
+<span class="text-[10px] font-mono px-2 py-1 bg-white/5 border border-white/10 rounded">RUST</span>
+<span class="text-[10px] font-mono px-2 py-1 bg-white/5 border border-white/10 rounded">WASM</span>
+<span class="text-[10px] font-mono px-2 py-1 bg-white/5 border border-white/10 rounded">DOCKER</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Education Section -->
+<section class="py-24" id="education">
+<div class="flex items-center gap-3 mb-16">
+<span class="material-symbols-outlined text-tertiary-fixed-dim" data-icon="school">school</span>
+<h2 class="font-h2 text-on-surface uppercase tracking-tight">Training_Data</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="glass-card p-8 rounded-xl flex items-start gap-6 border-t-2 border-t-primary-container">
+<div class="hidden sm:block">
+<img alt="University Logo" class="w-16 h-16 rounded object-cover grayscale brightness-150" data-alt="monochrome architectural detail of a university building with sharp geometric patterns" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQjMkoRcfUbRxe9BylYGXKSGJVhdvulr_1GFcqQowzrRtHbRftkY0FW7Xl3ZaXJ2Rn2K-2VascxQWKtTpkqt5fnU69d9KN5_SU-3qUWdmDOplQ-iL4AEeHKhedFrN6dPGB5V2MrmQ_W-azOvFz-4nO2mPit0WJRRvl-oFmdJ7AS0pSSmL1CSZhhohXOo6EAPiioiPxTmDREBH8IjyoLIRtIU-CVMYqi2-pmuD2wAse9UBEzGFuwAZz2sQlDhCSdIlisWCFoGH1uRE"/>
+</div>
+<div>
+<h3 class="font-h3 text-on-surface">B.Sc Computer Science</h3>
+<p class="text-primary-container font-code-sm mb-2">MIT UNIVERSITY / 2015 — 2019</p>
+<p class="text-on-surface-variant text-sm">Focused on Systems Architecture and Distributed Computing. GPA: 3.9/4.0</p>
+</div>
+</div>
+<div class="glass-card p-8 rounded-xl flex items-start gap-6 border-t-2 border-t-secondary">
+<div class="hidden sm:block">
+<img alt="Certification" class="w-16 h-16 rounded object-cover grayscale brightness-150" data-alt="close up of code on a high resolution monitor with dark theme colors" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA06erzXQesEBlhcyhZIz2nQnjRTcJgqMCPBUAGpU_MEoPwqOHXFFtxAlJG55R0hJYbFJyD8mxVRN5D4ul9QlSZtujDPL3HiYVFpWDuA6LBsWjh2ZqYGNY50K2dHM7de2510mtHR0DvsNDF4hacJ_BayjWMZ83yDYPfFC9oQ38wQWX0CNdNM0K_cUqIz-LmzR6iedd3CbKbbtXDMlozE0gqWi3VgLxZnEaRAvTr4Yqq8u_2ks-xZAUyuLexk_KAtNstEaoUZ31IiiY"/>
+</div>
+<div>
+<h3 class="font-h3 text-on-surface">AWS Certified Architect</h3>
+<p class="text-secondary font-code-sm mb-2">AMAZON WEB SERVICES / 2022</p>
+<p class="text-on-surface-variant text-sm">Professional certification for designing complex cloud architectures.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="py-24 mb-12" id="contact">
+<div class="glass-card p-12 rounded-2xl text-center max-w-4xl mx-auto border-2 border-primary-container/20">
+<h2 class="font-h1 text-on-surface mb-6">READY TO PLAY?</h2>
+<p class="text-on-surface-variant mb-10 text-lg">Currently accepting new mission requests and creative collaborations.</p>
+<div class="flex flex-wrap justify-center gap-6">
+<a class="flex items-center gap-3 glass-card px-6 py-4 rounded-full hover:bg-primary-container/10 transition-all text-primary-container" href="mailto:hello@craftsperson.os">
+<span class="material-symbols-outlined" data-icon="mail">mail</span>
+<span class="font-label-caps">HELLO@CRAFTSPERSON.OS</span>
+</a>
+<div class="flex gap-4">
+<a class="w-14 h-14 glass-card rounded-full flex items-center justify-center hover:scale-110 transition-transform text-white" href="#">
+<span class="material-symbols-outlined" data-icon="terminal">terminal</span>
+</a>
+<a class="w-14 h-14 glass-card rounded-full flex items-center justify-center hover:scale-110 transition-transform text-secondary" href="#">
+<span class="material-symbols-outlined" data-icon="share">share</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 border-t border-dashed border-white/20 bg-[#0a0a0f]">
+<div class="flex flex-col items-center gap-6 max-w-7xl mx-auto px-4">
+<div class="flex gap-8">
+<a class="text-slate-500 font-mono text-[10px] tracking-widest hover:text-[#00f2ff] hover:scale-110 transition-transform" href="#">GITHUB</a>
+<a class="text-slate-500 font-mono text-[10px] tracking-widest hover:text-[#00f2ff] hover:scale-110 transition-transform" href="#">LINKEDIN</a>
+<a class="text-slate-500 font-mono text-[10px] tracking-widest hover:text-[#00f2ff] hover:scale-110 transition-transform" href="#">TWITTER</a>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#00f2ff] text-sm" data-icon="copyright">copyright</span>
+<span class="font-mono text-[10px] tracking-widest text-slate-500">2024 CRAFTSPERSON_OS. ALL RIGHTS RESERVED.</span>
+</div>
+<div class="flex gap-4 mt-4">
+<div class="w-2 h-2 rounded-full bg-[#ff0000]"></div>
+<div class="w-2 h-2 rounded-full bg-[#ffb8ff]"></div>
+<div class="w-2 h-2 rounded-full bg-[#00ffff]"></div>
+<div class="w-2 h-2 rounded-full bg-[#ffb851]"></div>
+</div>
+</div>
+</footer>
+</body></html>
